@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="img-container-header">
+        <img class="logo" src="https://placehold.it/300x105/fff" alt="">
+    </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#article">Articles</a>
+            <a href="form.html">Healthy Weight</a>
+            <a href="aboutus.html">About us</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Calculator</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus non, vero velit molestias nihil commodi dolor impedit omnis nam nulla consequuntur, beatae ipsum, repellat iusto earum quae rem illo dolorum.</p>
+
+
+            <div class="tab">
+                <button class="tablinks" onclick="openForm(event, 'Adults')">Adults</button>
+                <button class="tablinks" onclick="openForm(event, 'Children')">Children</button>
+              </div>
+              
+              <div id="Adults" class="tabcontent">
+                  
+                <form id="adults-form">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname" value="John"><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                    <input type="submit" value="Submit">
+                </form> 
+              </div>
+              
+              <div id="Children" class="tabcontent">
+                <form id="children-form">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname" value="John"><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                    <input type="submit" value="Submit">
+                  </form> 
+              </div>              
+
+    </main>
+    <footer>
+        copy rights 2021
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
