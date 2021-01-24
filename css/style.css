@@ -217,7 +217,7 @@ main
 
 /* Articles Section  */
 
-.articles
+#articles
 {
     display: grid;
     height: auto;
@@ -229,7 +229,7 @@ main
     grid-column: 2/3;
 }
 
-.articles h2
+#articles h2
 {
     text-align: center;
     font-size: 30px;
