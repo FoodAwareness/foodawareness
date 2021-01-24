@@ -1,10 +1,10 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(255, 255, 255);
+    background-color:  #d6d6d6    ;
 
   }
   #Art{
-    color: white;
+    color: rgb(0, 0, 0);
     margin-left: 30px;
     margin-top: 50px;
   }
@@ -75,3 +75,5 @@ body {
     margin-left: 150px;
  
   }
+
+  
