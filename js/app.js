@@ -13,3 +13,16 @@ function openForm(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+// Pre Load Screen
+
+var myVar;
+
+function preLoad() {
+  myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myPage").style.display = "block";
+}

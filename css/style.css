@@ -1,4 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap');
+
+/* Preload Screen */
+#loader{
+position: fixed;
+z-index: 4;
+width: 100%;
+height: 100%;
+
+-webkit-animation: fadeout 2.5s; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadeout 2.5s; /* Firefox < 16 */
+    -ms-animation: fadeout 2.5s; /* Internet Explorer */
+     -o-animation: fadeout 2.5s; /* Opera < 12.1 */
+        animation: fadeout 2.5s;
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeout {
+    from { opacity: 0.9; }
+    to   { opacity: 0; }
+}
+#loader img
+{
+    height: 100%;
+    width: 100%;
+}
+
 body
 {
     display: grid;
@@ -29,6 +78,7 @@ header
     transform: translateY(-50%);
     height: 50px;
     width: 140px;
+
 }
 
 nav
@@ -165,9 +215,9 @@ main
     max-width: 40%;
 }
 
-/* our services  */
+/* Articles Section  */
 
-.our-services
+#articles
 {
     display: grid;
     height: auto;
@@ -179,21 +229,40 @@ main
     grid-column: 2/3;
 }
 
-.our-services h2
+#articles h2
 {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
 }
 
-.services-intro
+.articles-intro
 {
     padding-bottom: 4rem;
     padding-top: 4rem;
 }
+.articles-card
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 
+}
+.category-box
+{
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
+    height: 200px;
+    width: 350px;
+    margin: 10px;
+}
 
-
+.articles-card h3
+{
+    text-align: center;
+    padding: 30px;
+}
 
 /* Style the tab */
 .tab {
@@ -237,15 +306,13 @@ main
     margin-left: auto;
   }
 
-.form-container
+.main-container
 {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
 }
-
-
 
 /*--------------------- Footer  --------------------*/
 

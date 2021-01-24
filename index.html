@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body onload="preLoad()" id="myPage">
+    <div id="loader"><img src="assets/loader.gif" alt=""></div>
     <header>
         <div class="img-container-header">
-        <img class="logo" src="https://placehold.it/300x105/fff" alt="">
+        <a href="index.html"><img class="logo" src="assets/logo.gif" alt=""></a>
     </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="#article">Articles</a>
+            <a href="#articles">Articles</a>
             <a href="form.html">Healthy Weight</a>
             <a href="aboutus.html">About us</a>
             <a href="#contact">Contact Us</a>
@@ -32,11 +33,18 @@
                 <p>Lorlishing software like Aldus PageMaker including versions of Lorem Ipsum.ing versions of Lorem Ipsum. ing versions of Lorem Ipsum.</p>
                </div>
         </div>
-        <div class="our-services">
+        <div class="main-container">
+            <div id="articles">
             <div class="container">
-            <div class="services-intro"><h2>Our Services</h2></div> 
-            </div>         
+            <div class="articles-intro"><h2>Articles</h2></div>
+            <div class="articles-card">
+                <div class="category-box"><h3>CATEGORY</h3></div>
+                <div class="category-box"><h3>CATEGORY</h3></div>
+                <div class="category-box"><h3>CATEGORY</h3></div>
+            </div>
         </div>
+    </div>
+    </div>
     </main>
     <footer>
         copy rights 2021
