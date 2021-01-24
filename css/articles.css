@@ -1,0 +1,26 @@
+main{
+    padding: 50px;
+}
+main h1 {
+    font-size: 35px;
+    font-weight: 600;
+    padding: 0 0 20px 30px;
+}
+main h3{
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px 0 10px 15px;
+}
+details summary::-webkit-details-marker {
+    display:none;
+}
+details summary{
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+details p{
+    line-height: 1.5;
+}
