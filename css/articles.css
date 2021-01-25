@@ -4,23 +4,71 @@ main{
 main h1 {
     font-size: 35px;
     font-weight: 600;
-    padding: 0 0 20px 30px;
+    padding: 20px 0 10px 50px;
 }
 main h3{
     font-size: 25px;
     font-weight: 500;
-    padding: 10px 0 10px 15px;
+    padding: 30px 0 20px 15px;
 }
-details summary::-webkit-details-marker {
-    display:none;
-}
-details summary{
-    cursor: pointer;
-    font-size: 15px;
+main h4{
+    display: inline;
+    font-size: 20px;
     font-weight: 500;
-    line-height: 1.2;
-    margin: 10px 0;
+    padding: 10px 0px;
 }
-details p{
+/* details summary::-webkit-details-marker {
+    display:none;
+} */
+p{
+    width: 70%;
+    font-size: 15px;
+    font-weight: 300;
     line-height: 1.5;
+    text-align: justify;
+    margin: 5px 0px;
+}
+summary{
+    cursor: pointer;
+}
+details{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 5px 0px;
+}
+h5{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 50px;
+}
+details ul{
+    width: 60%;
+    margin: 10px 70px;
+}
+li{
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.catImg{
+    height: 150px;
+    width: 200px;
+    object-fit: cover;
+    padding: 5px;
+    margin-left: 30px;
+    box-shadow: 3px 3px 5px 2px #dddddd;
+}
+#chronic, #baby, #diet{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 30px;
+}
+.img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    padding: 10px;
+   margin: 30px 50px;
+    box-shadow: 5px 5px 10px 4px #dddddd;
 }
