@@ -53,7 +53,7 @@ body {
     margin-left: 30px;
     width: 29%;
     margin: 20px;
-    box-shadow: 0 5px 37px rgb(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px 2px #888888;
     background: #f7f5ed;
 }
 .card-image
