@@ -1,0 +1,151 @@
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #0297a6;
+    margin-right:auto;
+    margin-left: auto;
+    margin-top: 30px;
+    border-radius:  20px;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+      width: 50%;
+    color: #fff;
+    font-size: 30;
+    background-color:  #0297a6;
+    font-size: 100px;
+    float: left;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #067d88;
+    color: #fff;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #067d88;
+    color: #fff;
+
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    padding: 6px 12px;
+    margin-right:auto;
+    margin-left: auto;
+  }
+ #Children{
+     display: none;
+ }
+
+/*.main-container
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}*/
+
+
+#form-container{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background: #0297a6;
+    line-height: 1.8;
+    border-radius: 30px;
+    margin-bottom: 50px;
+}
+#form-container h1{
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color:  white;
+    font-weight: 400;
+}
+#form-container h2{
+    font-size: 20px;
+}
+form{
+    padding: 40px 70px 70px 70px;
+    color:  #fff;
+}
+.input1,select{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    font-weight: 400;
+    color:  #fff;
+    width: 90%;
+}
+.input2{
+    width: 0px;
+    height: 0px;
+}
+::placeholder{
+    color: #fff;
+}
+label{
+    color:  #fff;
+}
+.radio-label-male{
+    color : white;
+    padding: 5px 8px 4px 8px;
+    border: solid 1px rgb(0, 0, 0);
+    background-color: rgb(25, 52, 126);
+    border-radius: 20px;
+}
+.radio-label-female{
+    color : white;
+    padding: 5px 10px 4px 10px;
+    border: solid 1px rgb(0, 0, 0);
+    background-color: rgb(25, 52, 126);
+    border-radius: 20px;
+}
+.radio-label-male.active ,.radio-label-female.active {
+    background: #4d73f0;
+}
+#submit1,#submit2{
+    color: #fff;
+    background: #925f28;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 150px;
+    padding: 10px 20px 10px 20px;
+    margin-left: 30%;
+    font-size: 18px;
+  transition: 1s;
+}
+#submit1:hover , #submit2:hover{
+    transition: 500ms;
+    background: #f38713;
+}
+.submitDiv{
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+h1{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+}
+h2{
+    font-size: 25px;
+    font-weight: 500;
+}
+p{
+    font-size: 18px;
+}
