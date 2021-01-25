@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form</title>
     <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/articles.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,6 +13,7 @@
 <body>
     <header>
         <div class="img-container-header">
+
         <a href="index.html"><img class="logo" src="assets/logo.png" alt=""></a>
     </div>
         <nav>
@@ -26,34 +27,112 @@
     <main>
         <div class="main-container">
             <h2>Calculator</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus non, vero velit molestias nihil commodi dolor impedit omnis nam nulla consequuntur, beatae ipsum, repellat iusto earum quae rem illo dolorum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus non, vero velit molestias nihil commodi
+                dolor impedit omnis nam nulla consequuntur, beatae ipsum, repellat iusto earum quae rem illo dolorum.
+            </p>
 
 
             <div class="tab">
                 <button class="tablinks" onclick="openForm(event, 'Adults')">Adults</button>
                 <button class="tablinks" onclick="openForm(event, 'Children')">Children</button>
-              </div>
-              
-              <div id="Adults" class="tabcontent">
-                  
+            </div>
+
+            <div id="Adults" class="tabcontent">
+
                 <form id="adults-form">
-                    <label for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname" value="John"><br>
-                    <label for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                    <label for="Age">Age</label><br>
+                    <input type="number" id="number" value=""> Ages 18 - 80
+                    <br>
+
+                    <label for="Gender">Gender</label><br>
+                    <input type="radio" id="male" name="MF" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="MF" value="female">
+                    <label for="female">Female</label>
+                    <br>
+
+                    <label for="Hieght">Hieght</label><br>
+                    <input type="number"> Cm
+                    <br>
+
+                    <label for="Weight">Weight</label><br>
+                    <input type="number"> Kg
+                    <br>
+
+                    <label for="Activity">Activity</label><br>
+                    <select name="Activity" id="Activity">
+                        <option value="">Little Or No Activity</option>
+                        <option value="">Normal Activity</option>
+                        <option value="">Moderate Activity</option>
+                        <option value="">Very Active</option>
+                    </select><br>
+                    <label for="Diseases">Diseases</label><br>
+                    <input type="checkbox" id="HeartAttack" name="Diseases" value="">
+                    <label for="HeartAttack"> Heart Attack </label>
+
+                    <input type="checkbox" id="BloodPressure" name="Diseases" value="">
+                    <label for="BloodPressure"> Blood Pressure </label>
+
+                    <input type="checkbox" id="Diabetes" name="Diseases" value="">
+                    <label for="Diabetes"> Diabetes </label> <br>
                     <input type="submit" value="Submit">
-                </form> 
-              </div>
-              
-              <div id="Children" class="tabcontent">
+                </form>
+            </div>
+
+            <div id="Children" class="tabcontent">
                 <form id="children-form">
-                    <label for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname" value="John"><br>
-                    <label for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                    <label for="Age">Age</label><br>
+                    <input type="radio" id="4-8M" name="Age" value="">
+                    <label for="Age">4 - 8 Months</label>
+                    <input type="radio" id="8M-1Y" name="Age" value="">
+                    <label for="female">8 Month - 1 Year</label>
+
+                    
+                    <input type="radio" id="1-5Y" name="Age" value="">
+                    <label for="Age">1 - 5 Years</label>
+                    <input type="radio" id="6-9Y" name="Age" value="">
+                    <label for="Age">6 - 9 Years</label>
+                    <input type="radio" id="9-12Y" name="Age" value="">
+                    <label for="Age">9 - 12 Years</label>
+                    <input type="radio" id="12-18Y" name="Age" value="">
+                    <label for="Age">12 - 18 Years</label>
+                   <br>
+
+                    <label for="lname">Gender</label><br>
+                    <input type="radio" id="male" name="MF" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="MF" value="female">
+                    <label for="female">Female</label>
+                    <br>
+
+                    <label for="fname">Hieght</label><br>
+                    <input type="number"> Cm
+                    <br>
+
+                    <label for="fname">Weight</label><br>
+                    <input type="number"> Kg
+                    <br>
+
+                    <label for="fname">Activity</label><br>
+                    <select name="Activity" id="Activity">
+                        <option value="">Little Or No Activity</option>
+                        <option value="">Normal Activity</option>
+                        <option value="">Moderate Activity</option>
+                        <option value="">Very Active</option>
+                    </select><br>
+                    <label for="fname">Diseases</label><br>
+                    <input type="checkbox" id="HeartAttack" name="Diseases" value="">
+                    <label for="HeartAttack"> Heart Attack </label>
+
+                    <input type="checkbox" id="BloodPressure" name="Diseases" value="">
+                    <label for="BloodPressure"> Blood Pressure </label>
+
+                    <input type="checkbox" id="Diabetes" name="Diseases" value="">
+                    <label for="Diabetes"> Diabetes </label> <br>
+                    
                     <input type="submit" value="Submit">
-                  </form> 
-              </div>              
+                </form>
+            </div>
 
     </main>
     <footer>
