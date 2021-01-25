@@ -1,10 +1,11 @@
+'use strict';
+
 // Ipen Tabs for Forms
-var formContainer = document.getElementById('form-container')
-formContainer.style.display = "none";
+
 var tabcontent = document.getElementsByClassName("tabcontent");
 
-function openForm(evt, cityName) {
-  var i, tabcontent, tablinks;
+function openForm(evt, formName) {
+  var i, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
@@ -13,16 +14,8 @@ function openForm(evt, cityName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(formName).style.display = "block";
   evt.currentTarget.className += " active";
-}
-// To Enter The Form
-var displayform = document.getElementById('form-display');
-displayform.addEventListener('click', formdisplay)
-function formdisplay() {
-  formContainer.style.display = "block";
-  tabcontent[0].style.display = "block";
-  displayform.removeEventListener('click', formdisplay)
 }
 
 // Select Radio
@@ -56,9 +49,9 @@ function showPage() {
 
 
 
-// Decliration And Caculation Functions For BMR , BMI , BFP 
+// Decliration And Caculation Functions For BMR , BMI , BFP , Carbohydrates
 
-var BMRmale, BMRfemale, BMI, BFPadults, BFPchildren, Gender;
+var BMRmale, BMRfemale, BMI, BFPadults, BFPchildren, Carbs40, Carbs65, Carbs75, Protein10, Protein35, Gender;
 function CalculateBMRmale() {
   BMRmale = Math.floor(((10 * Weight) + (6.25 * Height) - (5 * Age) + 5) * Activity)
 }
@@ -77,6 +70,15 @@ function CalculateBFPadults() {
 
 function CalculateBFPchildren() {
   BFPchildren = Math.floor((1.51 * BMI) - (0.7 * Age) - (3.6 * Gender) + 1.4)
+}
+function CalculateCarbs(BMR) {
+  Carbs40 = Math.floor((BMR * 0.4) / 4)
+  Carbs65 = Math.floor((BMR * 0.65) / 4)
+  Carbs75 = Math.floor((BMR * 0.75) / 4)
+}
+function CalculateProtein(BMR) {
+  Protein10 = Math.floor((BMR * 0.1) / 4)
+  Protein35 = Math.floor((BMR * 0.35) / 4)
 }
 
 
@@ -100,9 +102,14 @@ function Result1(event1) {
   CalculateBFPadults();
   if (Gender === 1) {
     CalculateBMRmale();
+    CalculateCarbs(BMRmale)
+    CalculateProtein(BMRmale)
   } else {
     CalculateBMRfemale();
+    CalculateCarbs(BMRfemale)
+    CalculateProtein(BMRfemale)
   }
+  console.log(BMRmale, BMRfemale, BMI, BFPadults, Carbs40, Carbs65, Carbs75, Gender)
 }
 
 // Add Listener For Children Form
@@ -115,7 +122,7 @@ function Result2(event2) {
   Age = event2.target.AgeChildren.value;
   Height = event2.target.Height.value;
   Weight = event2.target.Weight.value;
- 
+
   if (event2.target.male.nextElementSibling.className === 'radio-label-male active') {
     Gender = 1;
   } else {
@@ -126,7 +133,11 @@ function Result2(event2) {
   CalculateBFPchildren();
   if (Gender === 1) {
     CalculateBMRmale();
+    CalculateCarbs(BMRmale)
+    CalculateProtein(BMRmale)
   } else {
     CalculateBMRfemale();
+    CalculateCarbs(BMRfemale)
+    CalculateProtein(BMRfemale)
   }
 }
