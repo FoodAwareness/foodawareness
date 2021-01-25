@@ -23,114 +23,118 @@
         </nav>
     </header>
     <main>
-        <div class="main-container">
+         <div class="main-container">
             <h2>Calculator</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus non, vero velit molestias nihil commodi
                 dolor impedit omnis nam nulla consequuntur, beatae ipsum, repellat iusto earum quae rem illo dolorum.
             </p>
+            <button id="form-display"> Enter </button>
 
+            <div id="form-container">
+                <div class="tab">
+                    <button class="tablinks" onclick="openForm(event, 'Adults')">
+                        <h2>Adults</h2>
+                    </button>
+                    <button class="tablinks" onclick="openForm(event, 'Children')">
+                        <h2>Children</h2>
+                    </button>
+                </div>
 
-            <div class="tab">
-                <button class="tablinks" onclick="openForm(event, 'Adults')">Adults</button>
-                <button class="tablinks" onclick="openForm(event, 'Children')">Children</button>
+                <div id="Adults" class="tabcontent">
+                    <h1>Enter Your Information</h1>
+
+                    <form id="adults-form">
+                        <label for="Age">Age</label><br>
+                        <input placeholder="18 - 80 Years" id="AgeAdults" class="input1" type="number" value="">
+                        <br>
+
+                        <label for="Gender">Gender</label><br>
+                        <input class="input2" type="radio" id="male" name="MF" value="1">
+                        <label class="radio-label-male" onclick="switchradio(event)" for="male">M</label>
+                        <input class="input2" type="radio" id="female" name="MF" value="0">
+                        <label class="radio-label-female" onclick="switchradio(event)" for="female">F</label>
+                        <br>
+
+                        <label for="Height">Height</label><br>
+                        <input placeholder="In cm" id="Height" class="input1" type="number">
+                        <br>
+
+                        <label for="Weight">Weight</label><br>
+                        <input placeholder="In kg" id="Weight" class="input1" type="number">
+                        <br>
+
+                        <label for="Activity">Activity</label><br>
+                        <select name="Activity" id="ActivityAdults">
+                            <option value="1.2">Little Or No Activity</option>
+                            <option value="1.375">Normal Activity</option>
+                            <option value="1.465">Moderate Activity</option>
+                            <option value="1.725">Very Active</option>
+                        </select><br>
+                        <label for="Diseases">Diseases</label><br>
+                        <input type="checkbox" id="HeartAttack" name="Diseases" value="">
+                        <label for="HeartAttack"> Heart Attack </label>
+
+                        <input type="checkbox" id="BloodPressure" name="Diseases" value="">
+                        <label for="BloodPressure"> Blood Pressure </label>
+
+                        <input type="checkbox" id="Diabetes" name="Diseases" value="">
+                        <label for="Diabetes"> Diabetes </label> <br>
+                        <div class="submitDiv">
+                            <input id="submit1" type="submit" value="Calculate">
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="Children" class="tabcontent">
+                    <h1>Enter Your Information</h1>
+                    <form id="children-form">
+                        <label for="Age">Age</label><br>
+                        <select name="Age" id="AgeChildren">
+                            <option value="1">4 Months- 1 Year</option>
+                            <option value="3">1 - 5 Years</option>
+                            <option value="11.5">5 - 18 Years</option>
+                        </select>
+                        <br>
+
+                        <label for="Gender">Gender</label><br>
+                        <input class="input2" type="radio" id="male" name="MF" value="1">
+                        <label class="radio-label-male" onclick="switchradio(event)" for="male">M</label>
+                        <input class="input2" type="radio" id="female" name="MF" value="0">
+                        <label class="radio-label-female" onclick="switchradio(event)" for="female">F</label>
+                        <br>
+
+                        <label for="Hieght">Height</label><br>
+                        <input placeholder="In cm" id="Height" class="input1" type="number">
+                        <br>
+
+                        <label for="Weight">Weight</label><br>
+                        <input placeholder="In kg" id="Weight"  class="input1" type="number">
+                        <br>
+
+                        <label for="Activity">Activity</label><br>
+                        <select name="Activity" id="ActivityChildren">
+                            <option value="1.2">Little Or No Activity</option>
+                            <option value="1.365">Normal Activity</option>
+                            <option value="1.475">Moderate Activity</option>
+                            <option value="1.725">Very Active</option>
+                        </select><br>
+                        <label for="Diseases">Diseases</label><br>
+                        <input type="checkbox" id="HeartAttack" name="Diseases" value="">
+                        <label for="HeartAttack"> Heart Attack </label>
+
+                        <input type="checkbox" id="BloodPressure" name="Diseases" value="">
+                        <label for="BloodPressure"> Blood Pressure </label>
+
+                        <input type="checkbox" id="Diabetes" name="Diseases" value="">
+                        <label for="Diabetes"> Diabetes </label> <br>
+                        <div class="submitDiv">
+                            <input id="submit2" type="submit" value="Calculate">
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <div id="Adults" class="tabcontent">
-
-                <form id="adults-form">
-                    <label for="Age">Age</label><br>
-                    <input type="number" id="number" value=""> Ages 18 - 80
-                    <br>
-
-                    <label for="Gender">Gender</label><br>
-                    <input type="radio" id="male" name="MF" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="MF" value="female">
-                    <label for="female">Female</label>
-                    <br>
-
-                    <label for="Hieght">Hieght</label><br>
-                    <input type="number"> Cm
-                    <br>
-
-                    <label for="Weight">Weight</label><br>
-                    <input type="number"> Kg
-                    <br>
-
-                    <label for="Activity">Activity</label><br>
-                    <select name="Activity" id="Activity">
-                        <option value="">Little Or No Activity</option>
-                        <option value="">Normal Activity</option>
-                        <option value="">Moderate Activity</option>
-                        <option value="">Very Active</option>
-                    </select><br>
-                    <label for="Diseases">Diseases</label><br>
-                    <input type="checkbox" id="HeartAttack" name="Diseases" value="">
-                    <label for="HeartAttack"> Heart Attack </label>
-
-                    <input type="checkbox" id="BloodPressure" name="Diseases" value="">
-                    <label for="BloodPressure"> Blood Pressure </label>
-
-                    <input type="checkbox" id="Diabetes" name="Diseases" value="">
-                    <label for="Diabetes"> Diabetes </label> <br>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-
-            <div id="Children" class="tabcontent">
-                <form id="children-form">
-                    <label for="Age">Age</label><br>
-                    <input type="radio" id="4-8M" name="Age" value="">
-                    <label for="Age">4 - 8 Months</label>
-                    <input type="radio" id="8M-1Y" name="Age" value="">
-                    <label for="female">8 Month - 1 Year</label>
-
-                    
-                    <input type="radio" id="1-5Y" name="Age" value="">
-                    <label for="Age">1 - 5 Years</label>
-                    <input type="radio" id="6-9Y" name="Age" value="">
-                    <label for="Age">6 - 9 Years</label>
-                    <input type="radio" id="9-12Y" name="Age" value="">
-                    <label for="Age">9 - 12 Years</label>
-                    <input type="radio" id="12-18Y" name="Age" value="">
-                    <label for="Age">12 - 18 Years</label>
-                   <br>
-
-                    <label for="lname">Gender</label><br>
-                    <input type="radio" id="male" name="MF" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="MF" value="female">
-                    <label for="female">Female</label>
-                    <br>
-
-                    <label for="fname">Hieght</label><br>
-                    <input type="number"> Cm
-                    <br>
-
-                    <label for="fname">Weight</label><br>
-                    <input type="number"> Kg
-                    <br>
-
-                    <label for="fname">Activity</label><br>
-                    <select name="Activity" id="Activity">
-                        <option value="">Little Or No Activity</option>
-                        <option value="">Normal Activity</option>
-                        <option value="">Moderate Activity</option>
-                        <option value="">Very Active</option>
-                    </select><br>
-                    <label for="fname">Diseases</label><br>
-                    <input type="checkbox" id="HeartAttack" name="Diseases" value="">
-                    <label for="HeartAttack"> Heart Attack </label>
-
-                    <input type="checkbox" id="BloodPressure" name="Diseases" value="">
-                    <label for="BloodPressure"> Blood Pressure </label>
-
-                    <input type="checkbox" id="Diabetes" name="Diseases" value="">
-                    <label for="Diabetes"> Diabetes </label> <br>
-                    
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+        </div> 
 
     </main>
     <footer>
