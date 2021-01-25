@@ -1,21 +1,7 @@
 // Ipen Tabs for Forms
 
-function openForm(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
 // Pre Load Screen
-
+var triger=false;
 var myVar;
 
 function preLoad() {
@@ -32,10 +18,13 @@ function showPage() {
 // submit contact us Form
 
 window.onclick = function(event) {
+if(triger){
   event.preventDefault();
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
+triger=false;
 }
 
 //Modal
@@ -52,9 +41,10 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
+  triger=true;
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
