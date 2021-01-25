@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/Cards.css">
+    <link rel="stylesheet" href="css/qouteCss.css">
+    <link rel="stylesheet" href="css/contact-form.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -14,7 +16,7 @@
     <div id="loader"><img src="assets/loader1.gif" alt=""></div>
     <header>
         <div class="img-container-header">
-        <a href="index.html"><img class="logo" src="assets/logo.gif" alt=""></a>
+        <a href="index.html"><img class="logo" src="assets/logo.png" alt=""></a>
     </div>
         <nav>
             <a href="index.html">Home</a>
@@ -26,76 +28,133 @@
     </header>
     <main>
         <div class="hero">
-            <video id="video-hero" autoplay muted loop>
-                <source src="assets/hero-background.mp4" type="video/mp4">
-            </video>
+            <div class="background-overlay">
             <div class="hero-text">
                 <h1>Health and Care</h1>
                 <p>Lorlishing software like Aldus PageMaker including versions of Lorem Ipsum.ing versions of Lorem Ipsum. ing versions of Lorem Ipsum.</p>
+                <a href="">Calculate Your BMI</a>
                </div>
+            </div>
         </div>
         <div class="main-container">
 
-            <h1 id="Art">Articles</h1>
+            <div class="articles-container">
 
-            <div id="card1">
-        
-              <div class="flip-card">
-                <a href="articles.html#category1Name">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="img/7458162.jpg" alt="Avatar" style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                      <h1>Heart Deseas</h1>
-                      <p>Related By food</p>
-        
-                    </div>
-                  </div>
-                </a>
+            
+            <div id="Art"><h3>Articles</h3></div>    
+            <div class="card">
+              <div class="card-image">
+                <img class="activator" src="http://alrikaztraining.motasemodeh.com/wp-content/uploads/2020/10/post-4.jpg">
+              </div>
+              <div class="card-content">
+                <span class="card-title">Card Title<i class="material-icons right">more_vert</i></span>
+                <span class="card-container-text">Lorem ipsum dolor sit amet, consectetur pis elit.
+                    Phasellus tristique id dolor nec tempus.
+                    Dui eget magna ut mi efficitur mostie. Nulla euagna feugiat, ullamcorper tempus magna.</span>
+                <p><a href="form.html">This is a link</a></p>
               </div>
             </div>
-        
-            <div id="card2">
-        
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="img/859-03982682en_Masterfile.jpg" alt="Avatar" style="width:300px;height:300px;">
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>For Kids</h1>
-                    <p>Related By food</p>
-        
-                  </div>
+
+
+            <div class="card">
+                <div class="card-image">
+                  <img class="activator" src="http://alrikaztraining.motasemodeh.com/wp-content/uploads/2020/10/post-4.jpg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Card Title<i class="material-icons right">more_vert</i></span>
+                  <span class="card-container-text">Lorem ipsum dolor sit amet, consectetur pis elit.
+                      Phasellus tristique id dolor nec tempus.
+                      Dui eget magna ut mi efficitur mostie. Nulla euagna feugiat, ullamcorper tempus magna.</span>
+                  <p><a href="#">This is a link</a></p>
                 </div>
               </div>
+
+
+              <div class="card">
+                <div class="card-image">
+                  <img class="activator" src="http://alrikaztraining.motasemodeh.com/wp-content/uploads/2020/10/post-4.jpg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Card Title<i class="material-icons right">more_vert</i></span>
+                  <span class="card-container-text">Lorem ipsum dolor sit amet, consectetur pis elit.
+                      Phasellus tristique id dolor nec tempus.
+                      Dui eget magna ut mi efficitur mostie. Nulla euagna feugiat, ullamcorper tempus magna.</span>
+                  <p><a href="#">This is a link</a></p>
+                </div>
+              </div>
+
+              </div>
+
+
+
+              
+
+            
+                <div id="contact"><h3>Contact us</h3></div>
+
+                <div class="contact-container">
+
+                <form>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                
+              
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                
+                    <input type="submit" id="sendMessage" value="Submit">
+                    
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                    <p>Thanks for your Message...</p>
+                    </div>
+                
+                </div>
+                    
+                  </form>
+                </div>
+
+    
+                  </div>
+
+
+                  <div class="articles-container">
+                  <div id="Art"><h3>Qoutes</h3></div>
+                  <div class="container">
+
+                    
+                    <div class="box">
+                    
+                    <div class="slider">
+                        <!-- Text here  -->
+                        <section>Test1</section>
+                        <section>Test2</section>
+                        <section>Test3</section>
+                        <section>Test4</section>
+                    </div>
+                    <div class="cont">
+                        <span class="Arr Left"> <img src="img/baseline_keyboard_arrow_left_black_18dp.png" alt=""> </span>
+                        <span class="Arr Right"> <img src="img/baseline_keyboard_arrow_right_black_18dp.png" alt=""> </span>
+                    </div>
+                </div>
             </div>
-        
-            <div id="card3">
-        
-        
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="img/240_F_281399620_T6kzmpsNxCKQlZFbRIYtVPm3DcheSuhm (1).jpg" alt="Avatar"
-                      style="width:300px;height:300px;">
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Diet</h1>
-                    <p>Related By food</p>
-        
-                  </div>
-                </div>
-              </div>
+        </div>
             </div>
         
         
     </div>
     </main>
     <footer>
-        copy rights 2021
+        <div class="copy-rights">MAASH 2021 All Rights Reserved</div>
+        <div class="footer-link"><a href="#"><i class="fab fa-github"></i></a></div>
     </footer>
+    <script src="js/slider.js"></script>
     <script src="js/app.js"></script>
 </body>
 
