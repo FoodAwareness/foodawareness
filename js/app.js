@@ -46,6 +46,15 @@ btn.onclick = function() {
   modal.style.display = "block";
 }
 
+var userName=document.getElementById("nameUser")
+if(localStorage.getItem("name")){
+  userName.textContent="Hello "+localStorage.getItem("name");
+
+}
+else{
+  userName.remove();
+}
+
 // When the user clicks on <span> (x), close the modal
 // span.onclick = function() {
 //   modal.style.display = "none";

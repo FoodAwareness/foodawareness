@@ -68,6 +68,7 @@ input[type=text], select, textarea {
   {
       border-radius: 8px;
       box-shadow: 5px 5px 10px 2px #888888;
-      background: #f7f5ed;
+      background: #ffffff
+      ;
       padding: 20px;
   }

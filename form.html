@@ -59,6 +59,8 @@
                     <h1>Enter Your Information</h1>
 
                     <form id="adults-form">
+                        <label for="name">Name</label>
+                        <input class="input1" type="text" id="name" value=""><br>
                         <label for="Age">Age</label><br>
                         <input placeholder="18 - 80 Years" id="AgeAdults" class="input1" type="number" value="">
                         <br>
@@ -85,15 +87,7 @@
                             <option value="1.465">Moderate Activity</option>
                             <option value="1.725">Very Active</option>
                         </select><br>
-                        <label for="Diseases">Diseases</label><br>
-                        <input type="checkbox" id="HeartAttack" name="Diseases" value="">
-                        <label for="HeartAttack"> Heart Attack </label>
-
-                        <input type="checkbox" id="BloodPressure" name="Diseases" value="">
-                        <label for="BloodPressure"> Blood Pressure </label>
-
-                        <input type="checkbox" id="Diabetes" name="Diseases" value="">
-                        <label for="Diabetes"> Diabetes </label> <br>
+                        
                         <div class="submitDiv">
                             <input id="submit1" type="submit" value="Calculate">
                         </div>
@@ -133,16 +127,7 @@
                             <option value="1.365">Normal Activity</option>
                             <option value="1.475">Moderate Activity</option>
                             <option value="1.725">Very Active</option>
-                        </select><br>
-                        <label for="Diseases">Diseases</label><br>
-                        <input type="checkbox" id="HeartAttack" name="Diseases" value="">
-                        <label for="HeartAttack"> Heart Attack </label>
-
-                        <input type="checkbox" id="BloodPressure" name="Diseases" value="">
-                        <label for="BloodPressure"> Blood Pressure </label>
-
-                        <input type="checkbox" id="Diabetes" name="Diseases" value="">
-                        <label for="Diabetes"> Diabetes </label> <br>
+                       
                         <div class="submitDiv">
                             <input id="submit2" type="submit" value="Calculate">
                         </div>
@@ -150,8 +135,10 @@
                 </div>
             </div>
         </div>
-        <div id="Results">
 
+        <div id="Results">
+         
+            
         </div>
     </main>
     <footer>
@@ -161,7 +148,7 @@
           <a href="#"><i class="social-icon fab fa-twitter"></i></a>
         </div>
       </footer>
-      <script src="js/app.js"></script>
+     
     <script src="js/form.js"></script>
 </body>
 
