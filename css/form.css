@@ -1,0 +1,229 @@
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #02a61d;
+    margin-right:auto;
+    margin-left: auto;
+    border-bottom-left-radius: 0px  ;
+    border-bottom-right-radius: 0px  ;
+    border-top-left-radius: 5px  ;
+    border-top-right-radius: 5px  ;
+    /* border-radius:  10px; */
+  
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+      width: 50%;
+    color: #fff;
+    font-size: 30;
+    background-color:  #24978a;
+    font-size: 100px;
+    float: left;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    border-bottom-left-radius: 0px  ;
+    border-bottom-right-radius: 0px  ;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #067d88;
+    color: #fff;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #023933;
+    color: #fff;
+    border-bottom-left-radius: 0px  ;
+    border-bottom-right-radius: 0px  ;
+
+  }
+ 
+  /* Style the tab content */
+  .tabcontent {
+    padding: 6px 12px;
+    margin-right:auto;
+    margin-left: auto;
+  }
+ #Children{
+     display: none;
+ }
+
+/*.main-container
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}*/
+
+
+#form-container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 30px; */
+    background: #023933;
+    line-height: 1.8;
+    border-radius: 10px;
+  
+    /* margin-bottom: 50px; */
+}
+#form-container h1{
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color:  white;
+    font-weight: 400;
+}
+#form-container h2{
+    font-size: 20px;
+}
+form{
+    padding: 20px 40px 40px 40px;
+    color:  #fff;
+}
+.input1,select{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    font-weight: 400;
+    color:  #fff;
+    width: 90%;
+}
+.input2{
+    width: 0px;
+    height: 0px;
+}
+::placeholder{
+    color: #fff;
+}
+label{
+    color:  #fff;
+}
+.radio-label-male{
+    color : white;
+    padding: 5px 8px 4px 8px;
+    border: solid 1px rgb(0, 0, 0);
+    background-color: #24978a;
+    border-radius: 20px;
+}
+.radio-label-female{
+    color : white;
+    padding: 5px 10px 4px 10px;
+    border: solid 1px rgb(0, 0, 0);
+    background-color:  #24978a;
+    border-radius: 20px;
+}
+.radio-label-male.active ,.radio-label-female.active {
+    background: #4ef7f7;
+    color: rgb(8, 8, 8);
+}
+#submit1,#submit2{
+    color: #fff;
+    background: #f38713;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 150px;
+    padding: 10px 20px 10px 20px;
+    margin-left: 30%;
+    font-size: 18px;
+  transition: 1s;
+}
+#submit1:hover , #submit2:hover{
+    transition: 500ms;
+    background: #944f05;
+}
+.submitDiv{
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+h1{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+}
+h2{
+    font-size: 25px;
+    font-weight: 500;
+}
+p{
+    font-size: 18px;
+}
+
+
+
+table{
+    margin-left: 200px;
+border:2px solid black;
+margin-bottom: 10px;
+margin-top: 15px;
+ border-collapse: collapse; 
+}
+
+th{
+    color: white;
+    padding: 13px;
+    border:1px groove black;
+ border-collapse: collapse; 
+ background-color: #0297a6;
+}
+
+td{ 
+    
+    border-collapse: collapse; 
+    padding: 10px;
+    border:1px groove rgb(0, 0, 0);
+}
+
+tr:nth-of-type(2){
+
+    background-color:#f2f2f2;
+}
+tr:nth-of-type(4){
+
+    background-color: #f2f2f2;
+}
+tr:nth-of-type(3){
+
+    background-color: white;
+}
+#Results{
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 15px;
+line-height: 30px;
+}
+h3{
+    margin-left: 200px;
+}
+
+#Main{
+
+    display: grid;
+    grid-template-columns: 4fr 3fr ;
+}
+#form-container{
+
+grid-column: 2/3;
+}
+.Textintro{
+    grid-column: 1/2;
+}
+
+#ActivityAdults{
+    color: rgb(0, 0, 0);
+}
+#ActivityAdults:active{
+
+    color: white;
+}
