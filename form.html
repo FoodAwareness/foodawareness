@@ -60,28 +60,28 @@
 
                     <form id="adults-form">
                         <label for="name">Name</label>
-                        <input class="input1" type="text" id="name" value=""><br>
+                        <input class="input1" type="text" id="name" value="" required><br>
                         <label for="Age">Age</label><br>
-                        <input placeholder="18 - 80 Years" id="AgeAdults" class="input1" type="number" value="">
+                        <input placeholder="18 - 80 Years" id="AgeAdults" class="input1" type="number" value="" required>
                         <br>
 
                         <label for="Gender">Gender</label><br>
-                        <input class="input2" type="radio" id="male" name="MF" value="1">
+                        <input class="input2" type="radio" id="male" name="MF" value="1" required>
                         <label class="radio-label-male" onclick="switchradio(event)" for="male">M</label>
-                        <input class="input2" type="radio" id="female" name="MF" value="0">
+                        <input class="input2" type="radio" id="female" name="MF" value="0" required>
                         <label class="radio-label-female" onclick="switchradio(event)" for="female">F</label>
                         <br>
 
                         <label for="Height">Height</label><br>
-                        <input placeholder="In cm" id="Height" class="input1" type="number">
+                        <input placeholder="In cm" id="Height" class="input1" type="number" required>
                         <br>
 
                         <label for="Weight">Weight</label><br>
-                        <input placeholder="In kg" id="Weight" class="input1" type="number">
+                        <input placeholder="In kg" id="Weight" class="input1" type="number" required>
                         <br>
 
                         <label for="Activity">Activity</label><br>
-                        <select name="Activity" id="ActivityAdults">
+                        <select name="Activity" id="ActivityAdults" required>
                             <option value="1.2">Little Or No Activity</option>
                             <option value="1.375">Normal Activity</option>
                             <option value="1.465">Moderate Activity</option>
@@ -99,9 +99,9 @@
                     <h1>Enter Your Information</h1>
                     <form id="children-form">
                         <label for="name">Name</label>
-                        <input class="input1" type="text" id="name" value=""><br>
+                        <input class="input1" type="text" id="name" value="" required><br>
                         <label for="Age">Age</label><br>
-                        <select name="Age" id="AgeChildren">
+                        <select name="Age" id="AgeChildren" required>
                             <option value="1">4 Months- 1 Year</option>
                             <option value="3">1 - 5 Years</option>
                             <option value="11.5">5 - 18 Years</option>
@@ -116,15 +116,15 @@
                         <br>
 
                         <label for="Hieght">Height</label><br>
-                        <input placeholder="In cm" id="Height" class="input1" type="number">
+                        <input placeholder="In cm" id="Height" class="input1" type="number" required>
                         <br>
 
                         <label for="Weight">Weight</label><br>
-                        <input placeholder="In kg" id="Weight" class="input1" type="number">
+                        <input placeholder="In kg" id="Weight" class="input1" type="number" required>
                         <br>
 
                         <label for="Activity">Activity</label><br>
-                        <select name="Activity" id="ActivityChildren">
+                        <select name="Activity" id="ActivityChildren" required>
                             <option value="1.2">Little Or No Activity</option>
                             <option value="1.365">Normal Activity</option>
                             <option value="1.475">Moderate Activity</option>
