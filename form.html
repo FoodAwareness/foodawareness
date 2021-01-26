@@ -25,12 +25,14 @@
       </header>
     <main>
         <div class="main-container" id="Main">
+            <div id="text1">
             <div class="Textintro">
             <h1>Fitness and Health Calculator</h1>
+            
             <h2>BMR</h2>
             <p> Basal Metabolic Rate is the number of calories your body needs to accomplish it's most basic
                 life-sustaining functions and It depends on how much your physical activities ( Exercises ) are during
-                the day and it differs for male and female.</p>
+                the day.</p>
             <h2>BMI</h2>
             <p>Body Mass Index (BMI) is a person’s weight in kilograms divided by the square of height in meters , A
                 high BMI can be an indicator of high body fatness. </p>
@@ -45,8 +47,9 @@
             <h2>Sugar</h2>
             <p>The recommended sugar daily intake for adult males is 35 grams and for adult females is 30 grams and for
                 children it depends on child age for ( less than a year - 18 ) years old the recommended sugar intake is
-                ( 4 - 30 ) grams.</p>
+                ( 4 - 30 ) grams.</p><br><br>
         </div>
+    </div>
             <div id="form-container">
                 <div class="tab">
                     <button class="tablinks active" onclick="openForm(event, 'Adults')"  > 
@@ -61,10 +64,12 @@
                     <h1>Enter Your Information</h1>
 
                     <form id="adults-form">
+                        
                         <label for="name">Name</label>
                         <input class="input1" type="text" id="name" value="" required><br>
                         <label for="Age">Age</label><br>
                         <input placeholder="18 - 80 Years" id="AgeAdults" class="input1" type="number" value="" required>
+                    
                         <br>
 
                         <label for="Gender">Gender</label><br>
@@ -94,7 +99,7 @@
                         <div class="submitDiv">
                             <input id="submit1" type="submit" value="Calculate">
                         </div>
-
+                    
                     </form>
                 </div>
 
@@ -104,7 +109,7 @@
                         <label for="name">Name</label>
                         <input class="input1" type="text" id="name" value="" required><br>
                         <label for="Age">Age</label><br>
-                        <select name="Age" id="AgeChildren" required>
+                        <select style="background-color:white;" name="Age" id="AgeChildren" required>
                             <option value="1">4 Months- 1 Year</option>
                             <option value="3">1 - 5 Years</option>
                             <option value="11.5">5 - 18 Years</option>
@@ -127,7 +132,7 @@
                         <br>
 
                         <label for="Activity">Activity</label><br>
-                        <select name="Activity" id="ActivityChildren" required>
+                        <select style="background-color:white;" name="Activity" id="ActivityChildren" required>
                             <option value="1.2">Little Or No Activity</option>
                             <option value="1.365">Normal Activity</option>
                             <option value="1.475">Moderate Activity</option>
@@ -140,11 +145,12 @@
                 </div>
             </div>
         </div>
-
+        <div id = "popup">
         <div id="Results">
          
             
         </div>
+    </div>
     </main>
     <footer>
         <div class="copy-rights">MAASH 2021 All Rights Reserved</div>
