@@ -7,19 +7,32 @@
   text-align: center;
   font-size: 28px;
   position: relative;
-  background-color: #ffffff;
 }
+
+
+
 #contact:after {
   content: '';
-  width: 20%;
+  width: 5%;
   border-bottom: solid 1px rgb(0, 0, 0);
   position: absolute;
-  left: 40%;
+  left: 38%;
   top: 50%;
   z-index: 1;
 }
+
+#contact:before {
+  content: '';
+  width: 5%;
+  border-bottom: solid 1px rgb(0, 0, 0);
+  position: absolute;
+  right: 38%;
+  top: 50%;
+  z-index: 1;
+}
+
 #contact h3{
-  background-color: #ffffff; /* Same as the parents Background */
+  
   width: auto;
   display: inline-block;
   z-index: 2;
@@ -34,13 +47,14 @@
 }
 .contact-container{
   width: 70%;
+  grid-column: 2/3;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
   margin-bottom: 70px;
   height: auto;
 }
-input[type=text], select, textarea {
+.input-contact, select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -51,7 +65,7 @@ input[type=text], select, textarea {
     resize: vertical;
   }
   
-  input[type=submit] {
+  .confirm {
     background-color: #ff6600;
     color: white;
     padding: 12px 20px;
@@ -60,14 +74,93 @@ input[type=text], select, textarea {
     cursor: pointer;
   }
   
-  input[type=submit]:hover {
+  .confirm:hover {
     background-color: #ff6600;
   }
 
   .contact-container
   {
       border-radius: 8px;
-      box-shadow: 5px 5px 10px 2px #888888;
-      background: #f7f5ed;
+      box-shadow: 0px 1px 1px 0px #888888;
+      background: #ffffff;
       padding: 20px;
   }
+
+  .contat-us-section
+  {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+  }
+
+  .contact-info{
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    grid-column: 1/2;
+    overflow: hidden;
+    height: 100%;
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  
+  
+  .card-contact{
+    background: #2f3542;
+    padding: 0 20px;
+    margin: 0 10px;
+    width: calc(33% - 20px);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .card-icon{
+    font-size: 28px;
+    background: #ff6348;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px !important;
+    border-radius: 50%;
+    transition: 0.3s linear;
+  }
+  
+  .card-contact:hover .card-icon{
+    background: none;
+    color: #ff6348;
+    transform: scale(1.6);
+  }
+  
+  .card-contact p{
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    max-height: 0;
+    opacity: 0;
+    transition: 0.3s linear;
+  }
+  
+  .card-contact:hover p{
+    max-height: 40px;
+    opacity: 1;
+  }
+  
+  
+  @media screen and (max-width:800px) {
+    .contact-info{
+      flex-direction: column;
+      grid-column: 2/3;
+    }
+    .card-contact{
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+    }
+  }
+  

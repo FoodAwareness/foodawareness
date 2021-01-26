@@ -42,6 +42,8 @@ height: 100%;
     from { opacity: 1; }
     to   { opacity: 0; }
 }
+
+
 #loader img
 {
     height: 100%;
@@ -162,8 +164,13 @@ main
     display: grid;
     grid-template-columns: 1fr;
     grid-column: 1/-1;
-    background-color: #ffffff;
     margin-bottom: 20px;
+}
+
+#myPage
+{
+    background-color: #f7f5ed;
+    margin-bottom: 0;
 }
 .hero
 {
@@ -204,7 +211,6 @@ main
 .background-overlay
 {
     background-color: #0000006b;
-    opacity: 0.8;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
     height: 100%;
     width: 100%;
@@ -226,7 +232,6 @@ main
 {
     color: #FFFFFF;
     font-size: 1rem;
-    font-weight: bold;
     line-height: 39px;
     width: 50%;
     margin-left: auto;
@@ -356,7 +361,7 @@ main
 footer
 {
     display: grid;
-    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-columns: 4fr 8fr 2fr;
     background-color: #0297a6;
     height: auto;
     bottom: 0;
@@ -372,10 +377,12 @@ footer
 {
     grid-column: 2/3;
     margin: 5px;
+    margin:auto;
 }
 .footer-link
 {
     grid-column: 3/4;
+    margin: auto;
 }
 .social-icon
 {
@@ -389,5 +396,161 @@ footer
     grid-column: 1/-1;
 }
 
+.footer-sub
+{
+    grid-column: 1/2;
+}
+
+/* Add some padding and a grey background color to containers */
+.sub-container {
+    padding: 20px;
+    background-color: #f1f1f1;
+  }
+  
+  
+
+  
+.container-sub {	
+	width: 300px;
+	margin: auto;
+}
+
+.login_bar {
+    
+    height: 50px;
+    background: #0297a6;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.button-sub
+{
+    width: 100% !important;
+    height: 100% !important;
+    /* padding: 13px; */
+    border: 1px solid #0297a6 !important;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* margin-top: 6px; */
+    /* margin-bottom: 13px; */
+    resize: vertical !important;
+
+}
+
+.site-heading-main h2 {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+    
+    text-transform: uppercase;
+    }
+    
+    .site-heading-main h2 span {
+    color: #0297a6;
+    }
+    
+    .site-heading-main h4 {
+    display: inline-block;
+    padding-bottom: 20px;
+    font-size: 15px;
+    position: relative;
+    text-transform: capitalize;
+    z-index: 1;
+    }
+    
+    .site-heading-main h4::before {
+    background:#0297a6 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    /* left: 50%; */
+    margin-left: -25px;
+    margin-bottom: 10px ;
+    position: absolute;
+    width: 150px;
+    }
+    
+    .site-heading-main h2 span {
+    color: #0297a6;
+    }
+    
+    .site-heading-main {
+    margin-bottom: 60px;
+    overflow: hidden;
+    margin-top: -5px;
+    }
 
 
+.login {
+	background: transparent;
+	position: absolute;
+	height: 100%;
+	width: 190px;
+	padding-left: 10px;
+	text-align: left;
+	line-height: 50px;
+	vertical-align: middle;
+	z-index: 10;
+	-webkit-transition: transform 0.2s ease-in-out 0s;
+	   -moz-transition: transform 0.2s ease-in-out 0s;
+	     -o-transition: transform 0.2s ease-in-out 0s;
+	        transition: transform 0.2s ease-in-out 0s;
+}
+
+.login_active {
+	-webkit-transform: translateX(300px);
+	   -moz-transform: translateX(300px);
+	    -ms-transform: translateX(300px);
+	     -o-transform: translateX(300px);
+	        transform: translateX(300px);
+}
+
+.subscribe_button:hover{
+	background-color: #222A33;
+	cursor:pointer;
+}
+
+.subscribe_button {
+    background: #035a63;
+    position: absolute;
+    top: -50px;
+    left: 200px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 150px;
+    width: 100px;
+    text-align: center;
+    line-height: 150px;
+    vertical-align: middle;
+    color: white;
+    -webkit-transition: transform 0.5s ease 0s;
+    -moz-transition: transform 0.5s ease 0s;
+    -o-transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s;
+}
+
+.subscribe_button_active{
+	-webkit-transform: translateY(50px);
+	   -moz-transform: translateY(50px);
+	    -ms-transform: translateY(50px);
+	     -o-transform: translateY(50px);
+	        transform: translateY(50px);
+}
+
+.subscribing{
+	background: #CDD4DC;
+	height: 100%;
+	width: 300px;
+	z-index: 5;
+	position: absolute;
+	left:-300px;
+	display: inline-block;
+	-webkit-transition: transform 1s ease 0s ;
+	   -moz-transition: transform 1s ease 0s ;
+	     -o-transition: transform 1s ease 0s ;
+	        transition: transform 1s ease 0s ;
+}
+  

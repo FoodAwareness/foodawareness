@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
  <link rel="stylesheet" href="css/scrollEffect.css">
+ <link rel="stylesheet" href="css/AboutCards.css">
+ <link rel="stylesheet" href="assets/fontawesome/css/all.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/Cards.css">
   <link rel="stylesheet" href="css/qouteCss.css">
@@ -32,9 +34,8 @@
       <div class="background-overlay">
         <div class="hero-text">
           <h1>Health and Care</h1>
-          <p>Lorlishing software like Aldus PageMaker including versions of Lorem Ipsum.ing versions of Lorem Ipsum. ing
-            versions of Lorem Ipsum.</p>
-          <a href="">Calculate Your BMI</a>
+          <p>Food shouldn’t just taste good—it should give your body the nutrients it needs to fuel you through the day. Learn more about different food groups and the health benefits they offer, as well as how to work these nutrient-packed foods into your diet.</p>
+          <a href="form.html">Calculate Your BMI</a>
         </div>
       </div>
     </div>
@@ -77,7 +78,7 @@
 
         <div class="card">
           <div class="card-image">
-            <img class="activator" src="img/topvectors200300233.jpg">
+            <img class="activator" src="img/diet3.jpg">
           </div>
           <div class="card-content">
             <span class="card-title">Healthy Diet<i class="material-icons right"></i></span>
@@ -94,8 +95,8 @@
 
     </div>
 
-    <div class="articles-container">
-      <div id="Art">
+    <div class="Qoutes-container">
+      <div id="Qoutes">
         <h3>Qoutes</h3>
       </div>
       <div class="effected">
@@ -121,17 +122,41 @@
     <div id="contact">
       <h3>Contact us</h3>
     </div>
-  <div class="effected">
+    
+      <div class="effected">
+        <div class="contat-us-section">
+    
+          <div class="contact-info">
+            <iframe
+        width="100%"
+        height="300"
+        frameborder="0" style="border:0"
+        src="https://maps.google.com/maps?q=Amman%20tabarbour&t=&z=7&ie=UTF8&iwloc=&output=embed" allowfullscreen>
+      
+      </iframe>
+      <div class="row-contact">
+        <div class="col-md-12">
+            <div class="site-heading-main">
+                <h2>Call us <span>On</span></h2>
+                <h4>+ 962 0790 910 041</h4>
+                <h2><span>E-mail</span></h2>
+                <h3>MAASH@example.com</h3>
+            </div>
+        </div>
+      </div>
+      </div>
+
+
     <div class="contact-container">
 
       <form>
         <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <input type="text" id="fname" name="firstname" class="input-contact" placeholder="Your name.." required>
         <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <input type="text" id="lname" name="lastname" class="input-contact" placeholder="Your last name.." required>
         <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-        <input type="submit" id="sendMessage" value="Submit">
+        <textarea id="subject" name="subject" class="input-contact" placeholder="Write something.." style="height:200px" required></textarea>
+        <input type="submit" id="sendMessage" value="Submit" class="confirm">
         <!-- The Modal -->
         <div id="myModal" class="modal">
           <!-- Modal content -->
@@ -139,10 +164,26 @@
             <p>Thanks for your Message...</p>
           </div>
         </div>
+        </form>
     </div>
+
+
+ </div>
+  </div>
+
   </div>
   </main>
   <footer>
+    <div class="footer-sub">
+      <div class="container-sub">
+        <div class="login_bar">
+          <input type="text"  placeholder="your Email.." class="button-sub">
+          <span class="login"></span>
+          <span class="subscribe_button">subscribe</span>
+          <span class="subscribing"></span>
+        </div>
+      </div>
+    </div>
     <div class="copy-rights">MAASH 2021 All Rights Reserved</div>
     <div class="footer-link">Follow <a href="#"><i class="social-icon fab fa-github"></i></a>
       <a href="#"><i class="social-icon fab fa-facebook"></i></a>
