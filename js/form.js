@@ -1,22 +1,21 @@
 'use strict'
 
 // Switch between tabs
-var trigger=true;
+var trigger = true;
 var tabcontent = document.getElementsByClassName("tabcontent");
 function openForm(evt, formName) {
-  var i, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(formName).style.display = "block";
-  evt.currentTarget.className += " active";
+    var i, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(formName).style.display = "block";
+    evt.currentTarget.className += " active";
 }
-
 
 // Select Radio
 
@@ -68,38 +67,36 @@ function CalculateProtein(BMR) {
 
 var AdultsForm = document.getElementById('adults-form');
 AdultsForm.addEventListener('submit', Result1);
-function Result1(event1) {
 
-  
+function Result1(event1) {
     event1.preventDefault();
-    if(trigger){
-    //console.log(event1);
-    Name=event1.target.name.value;
-    Age = event1.target.AgeAdults.value;
-    Height = event1.target.Height.value;
-    Weight = event1.target.Weight.value;
-    if (event1.target.male.labels[0].className === 'radio-label-male active') {
-        Gender = 1;
-    } else {
-        Gender = 0;
+    if (trigger) {
+        //console.log(event1);
+        Name = event1.target.name.value;
+        Age = event1.target.AgeAdults.value;
+        Height = event1.target.Height.value;
+        Weight = event1.target.Weight.value;
+        if (event1.target.male.labels[0].className === 'radio-label-male active') {
+            Gender = 1;
+        } else {
+            Gender = 0;
+        }
+        Activity = event1.target.ActivityAdults.value;
+        CalculateBMI();
+        CalculateBFPadults();
+        if (Gender === 1) {
+            CalculateBMRmale();
+            CalculateCarbs(BMRmale)
+            CalculateProtein(BMRmale)
+        } else {
+            CalculateBMRfemale();
+            CalculateCarbs(BMRfemale)
+            CalculateProtein(BMRfemale)
+        }
+        renderAdults();
+        LocalStoreAdults()
+        trigger = false;
     }
-    Activity = event1.target.ActivityAdults.value;
-    CalculateBMI();
-    CalculateBFPadults();
-    if (Gender === 1) {
-        CalculateBMRmale();
-        CalculateCarbs(BMRmale)
-        CalculateProtein(BMRmale)
-    } else {
-        CalculateBMRfemale();
-        CalculateCarbs(BMRfemale)
-        CalculateProtein(BMRfemale)
-    }
-    render();
-    console.log(BMRmale, BMRfemale, BMI, BFPadults, Carbs40, Carbs65, Carbs75, Gender)
-    LocalStoreAdults()
-    trigger=false;
-}
 
 }
 
@@ -107,36 +104,43 @@ function Result1(event1) {
 
 var ChildrenForm = document.getElementById('children-form');
 ChildrenForm.addEventListener('submit', Result2);
+
 function Result2(event2) {
     event2.preventDefault();
-    //console.log(event2);
-
-    Age = event2.target.AgeChildren.value;
-    Height = event2.target.Height.value;
-    Weight = event2.target.Weight.value;
-    // male = 1 , female = 0;
-    if (event2.target.male.nextElementSibling.className === 'radio-label-male active') {
-        Gender = 1;
-    } else {
-        Gender = 0;
+    if (trigger) {
+        //console.log(event2);
+        Name = event2.target.name.value;
+        Age = event2.target.AgeChildren.value;
+        Height = event2.target.Height.value;
+        Weight = event2.target.Weight.value;
+        // male = 1 , female = 0;
+        if (event2.target.male.nextElementSibling.className === 'radio-label-male active') {
+            Gender = 1;
+        } else {
+            Gender = 0;
+        }
+        Activity = event2.target.ActivityChildren.value;
+        CalculateBMI();
+        CalculateBFPchildren();
+        if (Gender === 1) {
+            CalculateBMRmale();
+            CalculateCarbs(BMRmale)
+            CalculateProtein(BMRmale)
+        } else {
+            CalculateBMRfemale();
+            CalculateCarbs(BMRfemale)
+            CalculateProtein(BMRfemale)
+        }
+        renderChildren();
+        LocalStoreChildren();
+        trigger = false;
     }
-    Activity = event2.target.ActivityChildren.value;
-    CalculateBMI();
-    CalculateBFPchildren();
-    if (Gender === 1) {
-        CalculateBMRmale();
-        CalculateCarbs(BMRmale)
-        CalculateProtein(BMRmale)
-    } else {
-        CalculateBMRfemale();
-        CalculateCarbs(BMRfemale)
-        CalculateProtein(BMRfemale)
-    }
-
 }
 
+// Storing Data From Adults Form
+
 function LocalStoreAdults() {
-    localStorage.setItem("name",Name)
+    localStorage.setItem("name", Name)
     localStorage.setItem('Age', Age)
     localStorage.setItem('Height', Height)
     localStorage.setItem('Weight', Weight)
@@ -157,111 +161,269 @@ function LocalStoreAdults() {
     localStorage.setItem('Protein 35%', Protein35)
 }
 
+// Storing Data From Children Form
 
-var thArray=["Goal","Daily Calories","40%","65%","75%"]
+function LocalStoreChildren() {
+    localStorage.setItem("name", Name)
+    localStorage.setItem('Age', Age)
+    localStorage.setItem('Height', Height)
+    localStorage.setItem('Weight', Weight)
+    localStorage.setItem('Gender', Gender)
+    localStorage.setItem('Activity', Activity)
+    localStorage.setItem('BMI', BMI)
+    localStorage.setItem('BFP', BFPchildren)
+    if (Gender === 1) {
+        localStorage.setItem('BMR', BMRmale)
+    } else {
+        localStorage.setItem('BMR', BMRfemale)
+    }
+    localStorage.setItem('Carbohydrates 40 %', Carbs40)
+    localStorage.setItem('Carbohydrates 65 %', Carbs65)
+    localStorage.setItem('Carbohydrates 75 %', Carbs75)
 
-
-
-
-
-function render (){
-if(Gender==1){
-    var meintancArr=[BMRmale,(BMRmale*0.4)/4,(BMRmale*0.65)/4,(BMRmale*0.75)/4];
-    var halflose=BMRmale/1.3;
-var loseHalfArr=[halflose,(halflose*0.4)/4,(halflose*0.65)/4,(halflose*0.75)/4];
-console.log(loseHalfArr);
-var halflose1=BMRmale/1.8;
-var Lose1KG=[halflose1,(halflose1*0.4)/4,(halflose1*0.65)/4,(halflose1*0.75)/4]
-}else{
-    var meintancArr=[BMRfemale,(BMRfemale*0.4)/4,(BMRfemale*0.65)/4,(BMRfemale*0.75)/4];
-
-    var halflose=BMRfemale/1.3;
-    var loseHalfArr=[halflose,(halflose*0.4)/4,(halflose*0.65)/4,(halflose*0.75)/4];
-    var halflose1=BMRfemale/1.8;
-    var Lose1KG=[halflose1,(halflose1*0.4)/4,(halflose1*0.65)/4,(halflose1*0.75)/4]
+    localStorage.setItem('Protein 10%', Protein10)
+    localStorage.setItem('Protein 35%', Protein35)
 }
+
+var thArray = ["Goal", "Daily Calories ( BMR ) ", "40%", "65%", "75%"]
+
+// Function To Render Adults Results. 
+
+function renderAdults() {
+    if (Gender == 1) {
+
+        var BMRmale40 = Math.floor(((BMRmale * 0.4) / 4))
+        var BMRmale65 = Math.floor(((BMRmale * 0.65) / 4))
+        var BMRmale75 = Math.floor(((BMRmale * 0.75) / 4))
+        var meintancArr = [Math.floor(BMRmale) + ' Calories', BMRmale40 + ' grams', BMRmale65 + ' grams', BMRmale75 + ' grams'];
+
+        var halflose = Math.floor(BMRmale / 1.3);
+        var halflose40 = Math.floor(((halflose * 0.4) / 4))
+        var halflose65 = Math.floor(((halflose * 0.65) / 4))
+        var halflose75 = Math.floor(((halflose * 0.75) / 4))
+        var loseHalfArr = [halflose + ' Calories', halflose40 + ' grams', halflose65 + ' grams', halflose75 + ' grams'];
+
+
+        var halflose1 = Math.floor(BMRmale / 1.8);
+        var halflose140 = Math.floor((halflose1 * 0.4) / 4);
+        var halflose165 = Math.floor((halflose1 * 0.65) / 4);
+        var halflose175 = Math.floor((halflose1 * 0.75) / 4);
+        var Lose1KG = [halflose1 + ' Calories', halflose140 + ' grams', halflose165 + ' grams', halflose175 + ' grams'];
+    } else {
+        var BMRfemale40 = Math.floor(((BMRfemale * 0.4) / 4))
+        var BMRfemale65 = Math.floor(((BMRfemale * 0.65) / 4))
+        var BMRfemale75 = Math.floor(((BMRfemale * 0.75) / 4))
+        var meintancArr = [Math.floor(BMRfemale) + ' Calories', BMRfemale40 + ' grams', BMRfemale65 + ' grams', BMRfemale75 + ' grams'];
+
+        var halflose = Math.floor(BMRfemale / 1.3);
+        var halflose40 = Math.floor(((halflose * 0.4) / 4))
+        var halflose65 = Math.floor(((halflose * 0.65) / 4))
+        var halflose75 = Math.floor(((halflose * 0.75) / 4))
+        var loseHalfArr = [halflose + ' Calories', halflose40 + ' grams', halflose65 + ' grams', halflose75 + ' grams'];
+
+
+        var halflose1 = Math.floor(BMRfemale / 1.8);
+        var halflose140 = Math.floor((halflose1 * 0.4) / 4);
+        var halflose165 = Math.floor((halflose1 * 0.65) / 4);
+        var halflose175 = Math.floor((halflose1 * 0.75) / 4);
+        var Lose1KG = [halflose1 + ' Calories', halflose140 + ' grams', halflose165 + ' grams', halflose175 + ' grams'];
+    }
 
     var ShowResult = document.getElementById('Results')
-var ProteinRes=document.createElement("h3")
-ProteinRes.textContent="your daily intake Protien between (10-35)% : "+"("+Protein10+")"+"-"+"("+Protein35+")"
-ShowResult.appendChild(ProteinRes)
+    var ProteinRes = document.createElement("h3")
+    ProteinRes.textContent = "Your daily intake Protien between ( 10 - 35 ) % : " + " ( " + Protein10 + ' - ' + Protein35 + " ) grams"
+    ShowResult.appendChild(ProteinRes)
 
-if(Gender==1){
-    var sugar=document.createElement("h3")
-    sugar.textContent="Avg Sugar intake per day for male : 36g "
+    if (Gender == 1) {
+        var sugar = document.createElement("h3")
+        sugar.textContent = "Avg Sugar intake per day for male : 36g "
+        ShowResult.appendChild(sugar)
+    } else {
+        var sugar = document.createElement("h3")
+        sugar.textContent = "Avg  Sugar intake per day for female : 30g "
+        ShowResult.appendChild(sugar)
+
+    }
+
+    var bodyFat = document.createElement("h3")
+    bodyFat.textContent = "Your Body Fat Percentage ( BFP ) is : " + BFPadults + " %"
+    ShowResult.appendChild(bodyFat)
+
+    var bodyMass = document.createElement("h3")
+    bodyMass.textContent = "Your Body Mass Percentage ( BMI ) is : " + BMI + " %"
+    ShowResult.appendChild(bodyMass)
+
+
+    var table = document.createElement("table")
+    ShowResult.appendChild(table)
+    var TR = document.createElement("tr")
+    table.appendChild(TR)
+    for (var x = 0; x < thArray.length; x++) {
+        var thMain = document.createElement("th");
+        thMain.textContent = thArray[x];
+        TR.appendChild(thMain);
+    }
+
+    //---------------------//
+
+    var TRtd = document.createElement("TR")
+    table.appendChild(TRtd)
+    var meint = document.createElement("td")
+    meint.textContent = "Weight maintenance "
+    TRtd.appendChild(meint)
+
+    for (var x = 0; x < loseHalfArr.length; x++) {
+        var menTH = document.createElement("td")
+        menTH.textContent = meintancArr[x];
+        TRtd.appendChild(menTH)
+    }
+
+    //---------------------//
+
+    var TRlo = document.createElement("TR")
+    table.appendChild(TRlo)
+    var losehalf = document.createElement("td")
+    losehalf.textContent = "Lose 0.5 kg/week "
+    TRlo.appendChild(losehalf)
+
+    for (var x = 0; x < loseHalfArr.length; x++) {
+        var LoseHdd = document.createElement("td")
+        LoseHdd.textContent = loseHalfArr[x];
+        TRlo.appendChild(LoseHdd)
+    }
+
+    //-----------------//
+
+    var TRlos = document.createElement("TR")
+    table.appendChild(TRlos)
+    var loseOne = document.createElement("td")
+    loseOne.textContent = "Lose 1 kg/week"
+    TRlos.appendChild(loseOne)
+
+    for (var x = 0; x < Lose1KG.length; x++) {
+        var Losing1k = document.createElement("td")
+        Losing1k.textContent = Lose1KG[x];
+        TRlos.appendChild(Losing1k)
+    }
+
+}
+
+// Function To Render Adults Results. 
+
+function renderChildren() {
+    if (Gender == 1) {
+
+        var BMRmale40 = Math.floor(((BMRmale * 0.4) / 4))
+        var BMRmale65 = Math.floor(((BMRmale * 0.65) / 4))
+        var BMRmale75 = Math.floor(((BMRmale * 0.75) / 4))
+        var meintancArr = [Math.floor(BMRmale) + ' Calories', BMRmale40 + ' grams', BMRmale65 + ' grams', BMRmale75 + ' grams'];
+
+        var halflose = Math.floor(BMRmale / 1.3);
+        var halflose40 = Math.floor(((halflose * 0.4) / 4))
+        var halflose65 = Math.floor(((halflose * 0.65) / 4))
+        var halflose75 = Math.floor(((halflose * 0.75) / 4))
+        var loseHalfArr = [halflose + ' Calories', halflose40 + ' grams', halflose65 + ' grams', halflose75 + ' grams'];
+
+
+        var halflose1 = Math.floor(BMRmale / 1.8);
+        var halflose140 = Math.floor((halflose1 * 0.4) / 4);
+        var halflose165 = Math.floor((halflose1 * 0.65) / 4);
+        var halflose175 = Math.floor((halflose1 * 0.75) / 4);
+        var Lose1KG = [halflose1 + ' Calories', halflose140 + ' grams', halflose165 + ' grams', halflose175 + ' grams'];
+    } else {
+        var BMRfemale40 = Math.floor(((BMRfemale * 0.4) / 4))
+        var BMRfemale65 = Math.floor(((BMRfemale * 0.65) / 4))
+        var BMRfemale75 = Math.floor(((BMRfemale * 0.75) / 4))
+        var meintancArr = [Math.floor(BMRfemale) + ' Calories', BMRfemale40 + ' grams', BMRfemale65 + ' grams', BMRfemale75 + ' grams'];
+
+        var halflose = Math.floor(BMRfemale / 1.3);
+        var halflose40 = Math.floor(((halflose * 0.4) / 4))
+        var halflose65 = Math.floor(((halflose * 0.65) / 4))
+        var halflose75 = Math.floor(((halflose * 0.75) / 4))
+        var loseHalfArr = [halflose + ' Calories', halflose40 + ' grams', halflose65 + ' grams', halflose75 + ' grams'];
+
+
+        var halflose1 = Math.floor(BMRfemale / 1.8);
+        var halflose140 = Math.floor((halflose1 * 0.4) / 4);
+        var halflose165 = Math.floor((halflose1 * 0.65) / 4);
+        var halflose175 = Math.floor((halflose1 * 0.75) / 4);
+        var Lose1KG = [halflose1 + ' Calories', halflose140 + ' grams', halflose165 + ' grams', halflose175 + ' grams'];
+    }
+
+    var ShowResult = document.getElementById('Results')
+    var ProteinRes = document.createElement("h3")
+    ProteinRes.textContent = "Your daily intake Protien between ( 10 - 35 ) % : " + " ( " + Protein10 + ' - ' + Protein35 + " ) grams"
+    ShowResult.appendChild(ProteinRes)
+
+    var sugar = document.createElement("h3")
     ShowResult.appendChild(sugar)
-}else{
-    var sugar=document.createElement("h3")
-    sugar.textContent="Avg  Sugar intake per day for female : 30g "
-    ShowResult.appendChild(sugar)
+    if (Age === 3) {
+        sugar.textContent = "Avg Sugar intake per day for Children Between ( 1 - 5 ) Years is : ( 15 - 20 ) g "
+    } else if (Age === 11.5) {
+        sugar.textContent = "Avg Sugar intake per day for Children Between ( 5 - 18 ) Years is : ( 20 - 30 ) g "
+    } else {
+        sugar.textContent = "Avg Sugar intake per day for Children Between ( 4 Months - 1 Year ) is : ( 15 - 20 ) g "
+    }
+
+    var bodyFat = document.createElement("h3")
+    bodyFat.textContent = "Your Child's Body Fat Percentage ( BFP ) is : " + BFPchildren + " %"
+    ShowResult.appendChild(bodyFat)
+
+    var bodyMass = document.createElement("h3")
+    bodyMass.textContent = "Your Child Body Mass Percentage ( BMI ) is : " + BMI + " %"
+    ShowResult.appendChild(bodyMass)
+
+
+    var table = document.createElement("table")
+    ShowResult.appendChild(table)
+    var TR = document.createElement("tr")
+    table.appendChild(TR)
+    for (var x = 0; x < thArray.length; x++) {
+        var thMain = document.createElement("th");
+        thMain.textContent = thArray[x];
+        TR.appendChild(thMain);
+    }
+
+    //---------------------//
+
+    var TRtd = document.createElement("TR")
+    table.appendChild(TRtd)
+    var meint = document.createElement("td")
+    meint.textContent = "Weight maintenance "
+    TRtd.appendChild(meint)
+
+    for (var x = 0; x < loseHalfArr.length; x++) {
+        var menTH = document.createElement("td")
+        menTH.textContent = meintancArr[x];
+        TRtd.appendChild(menTH)
+    }
+
+    //---------------------//
+
+    var TRlo = document.createElement("TR")
+    table.appendChild(TRlo)
+    var losehalf = document.createElement("td")
+    losehalf.textContent = "Lose 0.5 kg/week "
+    TRlo.appendChild(losehalf)
+
+    for (var x = 0; x < loseHalfArr.length; x++) {
+        var LoseHdd = document.createElement("td")
+        LoseHdd.textContent = loseHalfArr[x];
+        TRlo.appendChild(LoseHdd)
+    }
+
+    //-----------------//
+
+    var TRlos = document.createElement("TR")
+    table.appendChild(TRlos)
+    var loseOne = document.createElement("td")
+    loseOne.textContent = "Lose 1 kg/week"
+    TRlos.appendChild(loseOne)
+
+    for (var x = 0; x < Lose1KG.length; x++) {
+        var Losing1k = document.createElement("td")
+        Losing1k.textContent = Lose1KG[x];
+        TRlos.appendChild(Losing1k)
+    }
 
 }
-
-var bodyFat=document.createElement("h3")
-bodyFat.textContent="Your body fat percentage is : "+BFPadults+"%"
-ShowResult.appendChild(bodyFat)
-
-var bodyMass=document.createElement("h3")
-bodyMass.textContent="Your body mass percentage is : "+BMI+"%"
-ShowResult.appendChild(bodyMass)
-
-
-var table=document.createElement("table")
-ShowResult.appendChild(table)
-var TR=document.createElement("tr")
-table.appendChild(TR)
-for(var x=0;x<thArray.length;x++){
-  var thMain=document.createElement("th");
-thMain.textContent=thArray[x];
-  TR.appendChild(thMain);
-}
-//---------------------//
-var TRtd=document.createElement("TR")
-table.appendChild(TRtd)
- var meint=document.createElement("td")
- meint.textContent="maintenence Weight" 
- TRtd.appendChild(meint)
-
-for(var x=0;x<loseHalfArr.length;x++){
-
-    var menTH=document.createElement("td")
-    menTH.textContent=Math.floor(meintancArr[x]);
-    TRtd.appendChild(menTH)
-}
-
- //---------------------//
- var TRlo=document.createElement("TR")
- table.appendChild(TRlo)
- var losehalf=document.createElement("td")
- losehalf.textContent="Lose 0.5kg/week" 
- TRlo.appendChild(losehalf)
-
- for(var x=0;x<loseHalfArr.length;x++){
-
-    
-    var LoseHdd=document.createElement("td")
-    LoseHdd.textContent=Math.floor(loseHalfArr[x]);
-    TRlo.appendChild(LoseHdd)
-}
-
-
- //-----------------//
- var TRlos=document.createElement("TR")
- table.appendChild(TRlos)
- var loseOne=document.createElement("td")
- loseOne.textContent="Lose 1kg/week" 
- TRlos.appendChild(loseOne)
- for(var x=0;x<Lose1KG.length;x++){
-
-    
-    var Losing1k=document.createElement("td")
-    Losing1k.textContent=Math.floor(Lose1KG[x]);
-    TRlos.appendChild(Losing1k)
-}
-
- 
-
- /////////
-}
-
-
