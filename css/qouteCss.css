@@ -47,3 +47,48 @@
 .cont .Arr:hover{
     opacity: 1;
 }
+
+#text1 {
+    margin-left: 5%;
+    font-size: 15px;
+    margin-top: 1%;
+    font-style:italic;
+    font-family: cursive;
+}
+#img1 {   
+    margin-top: 7%;
+    margin-right: 10%;
+}
+#text2 {
+    margin-left: 5%;
+    font-size: 15px;
+    margin-top: 1%;
+    font-style:italic;
+    font-family: cursive;
+}
+#img2 {   
+    margin-top: 7%;
+    margin-right: 10%;
+}
+#text3 {
+    margin-left: 5%;
+    font-size: 15px;
+    margin-top: 1%;
+    font-style:italic;
+    font-family: cursive;
+}
+#img3 {   
+    margin-top: 7%;
+    margin-right: 10%;
+}
+#text4 {
+    margin-left: 5%;
+    font-size: 15px;
+    margin-top: 1%;
+    font-style:italic;
+    font-family: cursive;
+}
+#img4 {   
+    margin-top: 7%;
+    margin-right: 10%;
+}
