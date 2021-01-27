@@ -53,7 +53,7 @@ btn.onclick = function() {
 
 var userName=document.getElementById("nameUser")
 if(localStorage.getItem("name")){
-  userName.textContent="Name: "+localStorage.getItem("name");
+  userName.textContent="Hello, "+localStorage.getItem("name");
 
 }
 else{
@@ -95,16 +95,6 @@ if(localStorage.getItem("Gender")){
 else{
   userGender.remove();
 }
-
-// localStorage.setItem("name", Name)
-// localStorage.setItem('Age', Age)
-// localStorage.setItem('Height', Height)
-// localStorage.setItem('Weight', Weight)
-// localStorage.setItem('Gender', Gender)
-// localStorage.setItem('Activity', Activity)
-// localStorage.setItem('BMI', BMI)
-// localStorage.setItem('BFP', BFPadults)
-
 
 function getDataDrop() {
   document.getElementById("myDropdown").classList.toggle("show");
