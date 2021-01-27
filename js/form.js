@@ -3,7 +3,9 @@
 // Switch between tabs
 var trigger = true;
 var tabcontent = document.getElementsByClassName("tabcontent");
+
 var userNamePlace = document.getElementById('nameUser');
+
 function openForm(evt, formName) {
     var i, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -63,6 +65,7 @@ function CalculateProtein(BMR) {
     Protein10 = Math.floor((BMR * 0.1) / 4)
     Protein35 = Math.floor((BMR * 0.35) / 4)
 }
+
 function popup() {
     document.getElementById("Main").style.opacity = "0.2";
 }
@@ -82,6 +85,7 @@ function closed(){
     }
     closeresult.style.display = "none"
 }
+
 
 // Add Listener For Adults Form
 
@@ -115,7 +119,9 @@ function Result1(event1) {
         }
         renderAdults();
         LocalStoreAdults()
+
         popup();
+
         trigger = false;
     }
 
@@ -154,7 +160,9 @@ function Result2(event2) {
         }
         renderChildren();
         LocalStoreChildren();
+
         popup();
+
         trigger = false;
     }
 }
@@ -210,6 +218,8 @@ function LocalStoreChildren() {
 var thArray = ["Goal", "Daily Calories ( BMR ) ", "40%", "65%", "75%"]
 
 
+
+
 function renderAdults() {
     if (Gender == 1) {
 
@@ -251,12 +261,14 @@ function renderAdults() {
     }
 
     var ShowResult = document.getElementById('Results')
+
     ShowResult.style.display = "block";
     closebtn(ShowResult);
     ShowResult.style.border = "3px solid black"
     var hedaing = document.createElement('h4')
     hedaing.textContent = ' Your Results '
     ShowResult.appendChild(hedaing)
+
     var ProteinRes = document.createElement("h3")
     ProteinRes.textContent = "Your daily intake Protien between ( 10 - 35 ) % : " + " ( " + Protein10 + ' - ' + Protein35 + " ) grams"
     ShowResult.appendChild(ProteinRes)
@@ -277,7 +289,9 @@ function renderAdults() {
     ShowResult.appendChild(bodyFat)
 
     var bodyMass = document.createElement("h3")
+
     bodyMass.textContent = "Your Body Mass Percentage Index ( BMI ) is : " + BMI + " %"
+
     ShowResult.appendChild(bodyMass)
 
 
@@ -335,7 +349,9 @@ function renderAdults() {
 
 }
 
+
 // Function To Render Children Results. 
+
 
 function renderChildren() {
     if (Gender == 1) {
@@ -376,6 +392,7 @@ function renderChildren() {
         var halflose175 = Math.floor((halflose1 * 0.75) / 4);
         var Lose1KG = [halflose1 + ' Calories', halflose140 + ' grams', halflose165 + ' grams', halflose175 + ' grams'];
     }
+
     var ShowResult = document.getElementById('Results')
     ShowResult.style.display = "block";
     closebtn(ShowResult);
@@ -383,6 +400,7 @@ function renderChildren() {
     var hedaing = document.createElement('h4')
     hedaing.textContent = ' Your Results '
     ShowResult.appendChild(hedaing)
+
 
     var ProteinRes = document.createElement("h3")
     ProteinRes.textContent = "Your daily intake Protien between ( 10 - 35 ) % : " + " ( " + Protein10 + ' - ' + Protein35 + " ) grams"
@@ -403,7 +421,9 @@ function renderChildren() {
     ShowResult.appendChild(bodyFat)
 
     var bodyMass = document.createElement("h3")
+
     bodyMass.textContent = "Your Child Body Mass Index Percentage ( BMI ) is : " + BMI + " %"
+
     ShowResult.appendChild(bodyMass)
 
 
@@ -459,4 +479,6 @@ function renderChildren() {
         TRlos.appendChild(Losing1k)
     }
 
+
 }
+

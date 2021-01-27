@@ -135,10 +135,11 @@ text-align: center;
 .card-container-text
 {
   display: block;
-  color: #000000;
+  color: #fd9800;
   line-height: 1.5em;
   height: 55px;
   overflow-y: hidden;
+font-weight: 500;
 }
 
 .card-container-icons
@@ -186,4 +187,35 @@ text-align: center;
 {
   margin-top: 20px;
   float: left;
+}
+.motasem{
+
+}
+
+.afnan{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  
+
+}
+
+.shatha{
+width: 100%;
+height: 120%;
+object-fit: contain;
+background-color: #007cce;
+
+  
+}
+
+.fa-instagram:hover{
+  color: #0297a6;
+}
+.fa-linkedin:hover{
+  color: #0297a6;
+}
+.fa-github:hover{
+  color: #0297a6;
 }
