@@ -18,21 +18,24 @@ function showPage() {
 
 
 // submit contact us Form
+var modal = document.getElementById("myModal");
+ function closed(event) {
 
-window.onclick = function(event) {
   if(trigger){
-  event.preventDefault();
+    event.preventDefault();
+  console.log("dd");
   if (event.target == modal) {
     modal.style.display = "none";
     trigger=false;
   }
 }
 }
+window.addEventListener("click",closed )
 
 //Modal
 
 // Get the modal
-var modal = document.getElementById("myModal");
+
 
 // Get the button that opens the modal
 var btn = document.getElementById("sendMessage");
@@ -41,7 +44,8 @@ var btn = document.getElementById("sendMessage");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+btn.onclick = function(event) {
+  event.preventDefault()
   trigger=true;
   modal.style.display = "block";
 }
