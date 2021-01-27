@@ -50,3 +50,76 @@ btn.onclick = function() {
 // span.onclick = function() {
 //   modal.style.display = "none";
 // }
+
+var userName=document.getElementById("nameUser")
+if(localStorage.getItem("name")){
+  userName.textContent="Name: "+localStorage.getItem("name");
+
+}
+else{
+  userName.remove();
+}
+
+var userAge=document.getElementById("ageUser")
+if(localStorage.getItem("Age")){
+  userAge.textContent="Age: "+localStorage.getItem("Age");
+
+}
+else{
+  userAge.remove();
+}
+
+
+var userHeight=document.getElementById("HeightUser")
+if(localStorage.getItem("Height")){
+  userHeight.textContent="Height: "+localStorage.getItem("Height");
+
+}
+else{
+  userHeight.remove();
+}
+
+var userWeight=document.getElementById("WeightUser")
+if(localStorage.getItem("Weight")){
+  userWeight.textContent="Weight: "+localStorage.getItem("Weight");
+
+}
+else{
+  userWeight.remove();
+}
+
+var userGender=document.getElementById("userData")
+if(localStorage.getItem("Gender")){
+
+}
+else{
+  userGender.remove();
+}
+
+// localStorage.setItem("name", Name)
+// localStorage.setItem('Age', Age)
+// localStorage.setItem('Height', Height)
+// localStorage.setItem('Weight', Weight)
+// localStorage.setItem('Gender', Gender)
+// localStorage.setItem('Activity', Activity)
+// localStorage.setItem('BMI', BMI)
+// localStorage.setItem('BFP', BFPadults)
+
+
+function getDataDrop() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        // openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
