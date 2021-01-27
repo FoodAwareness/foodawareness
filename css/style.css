@@ -203,7 +203,7 @@ main
 
 .hero-text a
 {
-    font-weight: 600;
+    font-weight: 400;
     color: #ffffff;
     background-color: #ff6600;
     border-radius: 3px 3px 3px 3px;
@@ -214,6 +214,10 @@ main
     text-decoration: none;
 }
 
+.hero-text a:hover{
+ color: #ff6600;
+	 background-color:#ffffff;
+}
 /* Articles Section  */
 
 #articles
