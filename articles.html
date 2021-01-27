@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articles</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/dropdown.css">
  <link rel="stylesheet" href="assets/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/articles.css">
@@ -14,16 +15,27 @@
 <body>
     <header>
         <div class="img-container-header">
-            <a href="index.html"><img class="logo" src="assets/logo.png" alt=""></a>
+          <a href="index.html"><img class="logo" src="assets/logo.png" alt=""></a>
         </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html#Art">Articles</a>
-            <a href="form.html">Healthy Weight</a>
-            <a href="aboutus.html">About us</a>
-            <a href="index.html#contact">Contact Us</a>
+          <a href="index.html">Home</a>
+          <a href="#Art">Articles</a>
+          <a href="form.html">Healthy Weight</a>
+          <a href="aboutus.html">About us</a>
+          <a href="#contact">Contact Us</a>
         </nav>
-    </header>
+        <div id="userData">
+            <div class="dropdown">
+              <button onclick="getDataDrop()" class="dropbtn">User</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a id="nameUser"></a>
+                <a id="ageUser"></a>
+                <a id="HeightUser"></a>
+                <a id="WeightUser"></a>
+              </div>
+            </div>
+        </div>
+      </header>
     <main>
 
         <div id="main">
@@ -552,6 +564,7 @@
           <a href="#"><i class="social-icon fab fa-twitter"></i></a>
         </div>
       </footer>
+      <script src="js/app.js"></script>
     <!-- <script src="js/app.js"></script> -->
 </body>
 

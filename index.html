@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
  <link rel="stylesheet" href="css/scrollEffect.css">
+ <link rel="stylesheet" href="css/dropdown.css">
  <link rel="stylesheet" href="css/AboutCards.css">
  <link rel="stylesheet" href="assets/fontawesome/css/all.css">
   <link rel="stylesheet" href="css/reset.css">
@@ -28,6 +29,17 @@
       <a href="aboutus.html">About us</a>
       <a href="#contact">Contact Us</a>
     </nav>
+    <div id="userData">
+        <div class="dropdown">
+          <button style="border-radius: 50%;" onclick="getDataDrop()" class="dropbtn"><i class="fas fa-user"></i></button>
+          <div id="myDropdown" class="dropdown-content">
+            <a id="nameUser"></a>
+            <a id="ageUser"></a>
+            <a id="HeightUser"></a>
+            <a id="WeightUser"></a>
+          </div>
+        </div>
+    </div>
   </header>
   <main>
     <div class="hero">

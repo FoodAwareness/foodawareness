@@ -3,6 +3,7 @@
 // Switch between tabs
 var trigger = true;
 var tabcontent = document.getElementsByClassName("tabcontent");
+var userNamePlace = document.getElementById('nameUser');
 function openForm(evt, formName) {
     var i, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -208,7 +209,6 @@ function LocalStoreChildren() {
 
 var thArray = ["Goal", "Daily Calories ( BMR ) ", "40%", "65%", "75%"]
 
-// Function To Render Adults Results. 
 
 function renderAdults() {
     if (Gender == 1) {
