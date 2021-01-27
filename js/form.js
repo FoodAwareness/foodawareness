@@ -3,6 +3,9 @@
 // Switch between tabs
 var trigger = true;
 var tabcontent = document.getElementsByClassName("tabcontent");
+
+var userNamePlace = document.getElementById('nameUser');
+
 function openForm(evt, formName) {
     var i, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -63,6 +66,27 @@ function CalculateProtein(BMR) {
     Protein35 = Math.floor((BMR * 0.35) / 4)
 }
 
+function popup() {
+    document.getElementById("Main").style.opacity = "0.2";
+}
+function closebtn (ab){
+    var button = document.createElement('button');
+    button.id = "closebtn";
+    button.setAttribute("onclick", "closed()")
+    ab.appendChild(button);
+    button.textContent = "X"
+}
+function closed(){
+    trigger = true 
+    document.getElementById("Main").style.opacity = "1";
+    var closeresult = document.getElementById('Results');
+    while(closeresult.firstChild){
+        closeresult.removeChild(closeresult.firstChild)
+    }
+    closeresult.style.display = "none"
+}
+
+
 // Add Listener For Adults Form
 
 var AdultsForm = document.getElementById('adults-form');
@@ -95,6 +119,9 @@ function Result1(event1) {
         }
         renderAdults();
         LocalStoreAdults()
+
+        popup();
+
         trigger = false;
     }
 
@@ -133,6 +160,9 @@ function Result2(event2) {
         }
         renderChildren();
         LocalStoreChildren();
+
+        popup();
+
         trigger = false;
     }
 }
@@ -187,7 +217,8 @@ function LocalStoreChildren() {
 
 var thArray = ["Goal", "Daily Calories ( BMR ) ", "40%", "65%", "75%"]
 
-// Function To Render Adults Results. 
+
+
 
 function renderAdults() {
     if (Gender == 1) {
@@ -230,7 +261,14 @@ function renderAdults() {
     }
 
     var ShowResult = document.getElementById('Results')
-    showPag
+
+    ShowResult.style.display = "block";
+    closebtn(ShowResult);
+    ShowResult.style.border = "3px solid black"
+    var hedaing = document.createElement('h4')
+    hedaing.textContent = ' Your Results '
+    ShowResult.appendChild(hedaing)
+
     var ProteinRes = document.createElement("h3")
     ProteinRes.textContent = "Your daily intake Protien between ( 10 - 35 ) % : " + " ( " + Protein10 + ' - ' + Protein35 + " ) grams"
     ShowResult.appendChild(ProteinRes)
@@ -251,7 +289,9 @@ function renderAdults() {
     ShowResult.appendChild(bodyFat)
 
     var bodyMass = document.createElement("h3")
-    bodyMass.textContent = "Your Body Mass Percentage ( BMI ) is : " + BMI + " %"
+
+    bodyMass.textContent = "Your Body Mass Percentage Index ( BMI ) is : " + BMI + " %"
+
     ShowResult.appendChild(bodyMass)
 
 
@@ -309,7 +349,9 @@ function renderAdults() {
 
 }
 
-// Function To Render Adults Results. 
+
+// Function To Render Children Results. 
+
 
 function renderChildren() {
     if (Gender == 1) {
@@ -352,6 +394,14 @@ function renderChildren() {
     }
 
     var ShowResult = document.getElementById('Results')
+    ShowResult.style.display = "block";
+    closebtn(ShowResult);
+    ShowResult.style.border = "3px solid black"
+    var hedaing = document.createElement('h4')
+    hedaing.textContent = ' Your Results '
+    ShowResult.appendChild(hedaing)
+
+
     var ProteinRes = document.createElement("h3")
     ProteinRes.textContent = "Your daily intake Protien between ( 10 - 35 ) % : " + " ( " + Protein10 + ' - ' + Protein35 + " ) grams"
     ShowResult.appendChild(ProteinRes)
@@ -371,7 +421,9 @@ function renderChildren() {
     ShowResult.appendChild(bodyFat)
 
     var bodyMass = document.createElement("h3")
-    bodyMass.textContent = "Your Child Body Mass Percentage ( BMI ) is : " + BMI + " %"
+
+    bodyMass.textContent = "Your Child Body Mass Index Percentage ( BMI ) is : " + BMI + " %"
+
     ShowResult.appendChild(bodyMass)
 
 
@@ -426,6 +478,7 @@ function renderChildren() {
         Losing1k.textContent = Lose1KG[x];
         TRlos.appendChild(Losing1k)
     }
+
 
 }
 
