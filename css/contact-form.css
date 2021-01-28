@@ -46,7 +46,7 @@
   margin: 0;
 }
 .contact-container{
-  width: 70%;
+  width: 80%;
   grid-column: 2/3;
   margin-left: auto;
   margin-right: auto;
@@ -88,8 +88,9 @@
 
   .contat-us-section
   {
+    margin: 0 100px;
     display: grid;
-    grid-template-columns: 4fr 5fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .contact-info{
