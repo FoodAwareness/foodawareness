@@ -15,8 +15,6 @@ function showPage() {
   // document.getElementById("myPage").style.display = "grid";
 }
 
-
-
 // submit contact us Form
 
 window.onclick = function(event) {
