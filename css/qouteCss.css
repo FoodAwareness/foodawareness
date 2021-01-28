@@ -50,35 +50,42 @@
 }
 
 #text1 {
-    margin-left: 5%;
-    
-    font-size: 15px;
+    margin-left: 1%;
+    font-size: 13px;
+    font-weight: 600;
+    /* max-width: 40%; */
     margin-top: 1%;
-    font-style:italic;
+    font-style: italic;
     font-family: cursive;
 }
 
 #text2 {
-    margin-left: 5%;
-    font-size: 15px;
+    margin-left: 1%;
+    font-size: 13px;
+    font-weight: 600;
+    /* max-width: 40%; */
     margin-top: 1%;
-    font-style:italic;
+    font-style: italic;
     font-family: cursive;
 }
 
 #text3 {
-    margin-left: 5%;
-    font-size: 15px;
+    margin-left: 1%;
+    font-size: 13px;
+    font-weight: 600;
+    /* max-width: 40%; */
     margin-top: 1%;
-    font-style:italic;
+    font-style: italic;
     font-family: cursive;
 }
 
 #text4 {
-    margin-left: 5%;
-    font-size: 15px;
+    margin-left: 1%;
+    font-size: 13px;
+    font-weight: 600;
+    /* max-width: 40%; */
     margin-top: 1%;
-    font-style:italic;
+    font-style: italic;
     font-family: cursive;
 }
 
